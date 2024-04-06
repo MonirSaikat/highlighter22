@@ -23,13 +23,18 @@
       }
     </style>
   </head>
-  <body>
+  <body data-prismjs-copy-timeout="500">
     <div class="container">
       <nav>
         <ul>
           <li><strong>Highlighter22</strong></li>
         </ul>
         <ul>
+          <li>
+            <a href="#" id="theme-toggler">
+              <img src="./assets/theme-toggler.svg" alt="Theme Toggler" style="height: 32px; margin-top: 5px" />
+            </a>
+          </li>
           <li>
             <a href="https://github.com/MonirSaikat/highlighter22" target="_blank">
               <img src="./assets/github.svg" alt="" />
@@ -80,8 +85,9 @@ $(document).ready(function () {
     </div>
 
     <script src="jquery.min.js"></script>
+    <script src="./assets/web.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
-    <script src="./src/highlighter22.js"></script>
+    <script src="./highlighter22.min.js"></script>
 
     <script>
       $(document).ready(function () {
