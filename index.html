@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highlighter22</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        padding: 0.8rem;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><strong>Highlighter22</strong></li>
+        </ul>
+        <ul>
+          <li>
+            <a href="http://github.com" target="_blank">
+              <img src="./assets/github.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+      <h3>Live Example</h3>
+
+      <input
+        type="text"
+        id="search-field"
+        placeholder="Search here..."
+        autofocus
+      />
+
+      <div class="boxes grid">
+        <div class="box">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="box">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="box">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+
+      <br /><b></b>
+      <h3>Example of using</h3>
+
+      <pre><code class="language-javascript">
+$(document).ready(function () {
+  $("input").highlighter22({
+    targets: ['.box h4', '.box p'],
+    backgroundColor: "red",
+  });
+});
+        </code></pre>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+    <script src="./src/highlighter22.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("input").highlighter22({
+          targets: [".box h4", ".box p"],
+          backgroundColor: "red",
+        });
+      });
+    </script>
+  </body>
+</html>
