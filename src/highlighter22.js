@@ -17,21 +17,16 @@
       return `color: ${settings.color}; background-color: ${settings.backgroundColor}; padding: ${settings.padding}px;`;
     }
 
-    
+
     return this.each(function () {
       var $input = $(this);
-      
+
       $input.on('input', function () {
         var inputValue = $input.val();
         var lowerCaseValue;
 
-        if(settings.escapeSpace && !inputValue.toString().trim()) return false;
-        
-        if (settings.escapeSpace) {
-          lowerCaseValue = inputValue.toLowerCase().replace(/[.*+?^${}()|[\]\\\s]/g, '\\$&');
-        } else {
-          lowerCaseValue = inputValue.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        }
+        if (settings.escapeSpace && !inputValue.toString().trim()) return false;
+        lowerCaseValue = inputValue.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
         if (settings.targets.length > 0) {
           $.each(settings.targets, function (index, targetEl) {
