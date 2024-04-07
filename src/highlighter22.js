@@ -21,7 +21,7 @@
       var $input = $(this);
 
       $input.on('input', function () {
-        var inputValue = $input.val();
+        var inputValue = $input.val().toString().trim();
         var lowerCaseValue;
 
         lowerCaseValue = inputValue.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
