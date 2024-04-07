@@ -9,7 +9,6 @@
       color: 'black',
       backgroundColor: '#FFFF00',
       padding: 0,
-      escapeSpace: true,
       targets: []
     }, options);
 
@@ -25,7 +24,6 @@
         var inputValue = $input.val();
         var lowerCaseValue;
 
-        if (settings.escapeSpace && !inputValue.toString().trim()) return false;
         lowerCaseValue = inputValue.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
         if (settings.targets.length > 0) {
@@ -40,8 +38,6 @@
             });
           });
         }
-
-
       });
     });
   };
