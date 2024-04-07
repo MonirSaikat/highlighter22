@@ -1,4 +1,7 @@
-
+/**
+ * Author: Monir Saikat
+ * Email: monirsaikat1@gmail.com 
+ */
 
 (function ($) {
   $.fn.highlighter22 = function (options) {
@@ -14,14 +17,16 @@
       return `color: ${settings.color}; background-color: ${settings.backgroundColor}; padding: ${settings.padding}px;`;
     }
 
+    
     return this.each(function () {
       var $input = $(this);
-      var $target = $(settings.target);
-
+      
       $input.on('input', function () {
         var inputValue = $input.val();
         var lowerCaseValue;
 
+        if(settings.escapeSpace && !inputValue.toString().trim()) return false;
+        
         if (settings.escapeSpace) {
           lowerCaseValue = inputValue.toLowerCase().replace(/[.*+?^${}()|[\]\\\s]/g, '\\$&');
         } else {
@@ -36,9 +41,7 @@
                 return `<mark style="${markStyle()}">${match}</mark>`;
               });
 
-              console.log(target);
               $(target).html(highlightedText);
-
             });
           });
         }
