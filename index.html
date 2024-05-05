@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css" />
 
     <style>
       * {
@@ -27,16 +27,25 @@
     <div class="container">
       <nav>
         <ul>
-          <li><a href="/"><strong>Highlighter22</strong></a></li>
+          <li>
+            <a href="/"><strong>Highlighter22</strong></a>
+          </li>
         </ul>
         <ul>
           <li>
             <a href="#" id="theme-toggler">
-              <img src="./assets/theme-toggler.svg" alt="Theme Toggler" style="height: 32px; margin-top: 5px" />
+              <img
+                src="./assets/theme-toggler.svg"
+                alt="Theme Toggler"
+                style="height: 32px; margin-top: 5px"
+              />
             </a>
           </li>
           <li>
-            <a href="https://github.com/MonirSaikat/highlighter22" target="_blank">
+            <a
+              href="https://github.com/MonirSaikat/highlighter22"
+              target="_blank"
+            >
               <img src="./assets/github.svg" alt="" />
             </a>
           </li>
@@ -54,26 +63,52 @@
         autofocus
       />
 
-      <div class="boxes grid">
-        <div class="box">
-          <h4>Lorem, ipsum dolor.</h4>
-          <p>Among going manor who did. Do ye is celebrated it sympathize considered. May ecstatic did surprise elegance the ignorant age. Own her miss cold last. It so numerous if he outlived disposal. How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved resolution. Hence hopes noisy may china fully and. Am it regard stairs branch thirty length afford.          </p>
+      <div class="boxes grid" data-highlighter-22>
+        <div class="box" data-filter>
+          <h4 data-key>Heading One</h4>
+          <p data-key>
+            Among going manor who did. Do ye is celebrated it sympathize
+            considered. May ecstatic did surprise elegance the ignorant age. Own
+            her miss cold last. It so numerous if he outlived disposal. How but
+            sons mrs lady when. Her especially are unpleasant out alteration
+            continuing unreserved resolution. Hence hopes noisy may china fully
+            and. Am it regard stairs branch thirty length afford.
+          </p>
         </div>
 
-        <div class="box">
-          <h4>Lorem, ipsum dolor.</h4>
-          <p>Style too own civil out along. Perfectly offending attempted add arranging age gentleman concluded. Get who uncommonly our expression ten increasing considered occasional travelling. Ever read tell year give may men call its. Piqued son turned fat income played end wicket. To do noisy downs round an happy books.</p>
+        <div class="box" data-filter>
+          <h4 data-key>Heading Two</h4>
+          <p data-key>
+            Style too own civil out along. Perfectly offending attempted add
+            arranging age gentleman concluded. Get who uncommonly our expression
+            ten increasing considered occasional travelling. Ever read tell year
+            give may men call its. Piqued son turned fat income played end
+            wicket. To do noisy downs round an happy books.
+          </p>
         </div>
 
-        <div class="box">
-          <h4>Lorem, ipsum dolor.</h4>
-          <p>On am we offices expense thought. Its hence ten smile age means. Seven chief sight far point any. Of so high into easy. Dashwoods eagerness oh extensive as discourse sportsman frankness. Husbands see disposed surprise likewise humoured yet pleasure. Fifteen no inquiry cordial so resolve garrets as. Impression was estimating surrounded solicitude indulgence son shy.</p>
+        <div class="box" data-filter>
+          <h4 data-key>Heading Three</h4>
+          <p data-key>
+            On am we offices expense thought. Its hence ten smile age means.
+            Seven chief sight far point any. Of so high into easy. Dashwoods
+            eagerness oh extensive as discourse sportsman frankness. Husbands
+            see disposed surprise likewise humoured yet pleasure. Fifteen no
+            inquiry cordial so resolve garrets as. Impression was estimating
+            surrounded solicitude indulgence son shy.
+          </p>
         </div>
       </div>
 
       <br /><b></b>
       <h3>Example of using</h3>
-      <p><a target="_blank" href="https://highlighter22.netlify.app/highlighter22.min.js">https://highlighter22.netlify.app/highlighter22.min.js</a></p>
+      <p>
+        <a
+          target="_blank"
+          href="https://highlighter22.netlify.app/highlighter22.min.js"
+          >https://highlighter22.netlify.app/highlighter22.min.js</a
+        >
+      </p>
 
       <pre class="language-javascript"><code>
 $(document).ready(function () {
@@ -93,7 +128,9 @@ $(document).ready(function () {
     <script>
       $(document).ready(function () {
         $("input").highlighter22({
-          targets: [".box h4", ".box p"],
+          backgroundColor: "red",
+          color: "white",
+          filter: true,
         });
       });
     </script>
