@@ -29,11 +29,18 @@
         // filter feature
         if (settings.filter) {
           pluginContainer.find('[data-filter]').each(function (item) {
-            const filterableContent = $(this)
+            var filterableContent = $(this)
               .text()
               .toString()
               .toLowerCase()
               .trim();
+
+            // json data
+            if($(this).data('json') !== undefined) {
+              filterableContent += Array($(this).data('json'))
+                .map(key => key)
+                .join(' ');
+            }
 
             $(this).hide();
 
