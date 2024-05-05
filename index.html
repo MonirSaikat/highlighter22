@@ -9,19 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
     <link rel="stylesheet" href="assets/style.css" />
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      .box {
-        padding: 0.8rem;
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-          rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-      }
-    </style>
+    <link rel="stylesheet" href="./src/highlighter22.css">
   </head>
   <body data-prismjs-copy-timeout="500">
     <div class="container">
@@ -111,10 +99,13 @@
       </p>
 
       <pre class="language-javascript"><code>
+
+        
 $(document).ready(function () {
   $("input").highlighter22({
-    targets: ['.box h4', '.box p'],
     backgroundColor: "red",
+    color: "white",
+    filter: true,
   });
 });
         </code></pre>

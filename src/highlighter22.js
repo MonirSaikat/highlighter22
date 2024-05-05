@@ -11,7 +11,23 @@
       padding: 0,
       targets: [],
       filter: false,
+      animation: 'bounce1'
     }, options);
+
+    const animateTypes = {
+      'fade': {
+        first: 'fadeIn',
+        second: 'fadeOut'
+      },
+      'bounce1': {
+        first: 'bounceIn',
+        second: 'bounceOut'
+      },
+      'bounce2': {
+        first: 'bounceInDown',
+        second: 'bounceOutUp'
+      },
+    }
 
     function markStyle() {
       return `color: ${settings.color}; background-color: ${settings.backgroundColor}; padding: ${settings.padding}px;`;
@@ -62,11 +78,20 @@
 
             cnt[_index] = countOccurrences(filterableContent, lowerCaseValue);
 
+            const display = $(this).css('display');
+            const first = animateTypes[settings.animation].first;
+            const second = animateTypes[settings.animation].second;
+
             if (cnt[_index]) {
-              $(this).show();
+              if (display == 'none') {
+                $(this).addClass(first).removeClass(second).show();
+              }
             } else {
-              $(this).hide();
+              if (display == 'block') {
+                $(this).addClass(second).removeClass(first).hide();
+              }
             }
+
           });
 
           const elements = [];
