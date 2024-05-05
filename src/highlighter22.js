@@ -30,8 +30,6 @@
             const filterableContent = $(this)
               .text()
               .toString()
-              .replace('\n', '')
-              .replace('\t', '')
               .toLowerCase()
               .trim();
 
