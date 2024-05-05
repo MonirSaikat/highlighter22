@@ -19,6 +19,21 @@
 
     const pluginContainer = $('[data-highlighter-22]');
 
+    function countOccurrences(string, substring) {
+      if (!substring) return 1;
+      const regex = new RegExp(substring, 'gi');
+      const matches = string.match(regex);
+      return matches ? matches.length : 0;
+    }
+
+    function sortObjectByValue(obj, desc = false) {
+      return Object.entries(obj).sort(function (a, b) {
+        return desc ? (b[1] - a[1]) : (a[1] - b[1]);
+      });
+    }
+
+    const initValues = $('[data-filter]');
+
     return this.each(function () {
       var $input = $(this);
 
@@ -28,7 +43,9 @@
 
         // filter feature
         if (settings.filter) {
-          pluginContainer.find('[data-filter]').each(function (item) {
+          const cnt = {};
+
+          pluginContainer.find('[data-filter]').each(function (_index, item) {
             var filterableContent = $(this)
               .text()
               .toString()
@@ -36,18 +53,38 @@
               .trim();
 
             // json data
-            if($(this).data('json') !== undefined) {
-              filterableContent += Array($(this).data('json'))
-                .map(key => key)
+            if ($(this).data('json') !== undefined) {
+              filterableContent += ' ';
+              filterableContent += eval($(this).data('json'))
+                .map(key => key.toLowerCase())
                 .join(' ');
             }
 
-            $(this).hide();
+            cnt[_index] = countOccurrences(filterableContent, lowerCaseValue);
 
-            if (filterableContent.includes(lowerCaseValue)) {
+            if (cnt[_index]) {
               $(this).show();
+            } else {
+              $(this).hide();
             }
           });
+
+          const elements = [];
+
+          pluginContainer.children().each(function (index) {
+            elements[index] = $(this);
+          });
+
+          pluginContainer.empty();
+
+          var sortedElements = sortObjectByValue(cnt, true);
+          if (lowerCaseValue.length == 0) {
+            pluginContainer.html(initValues);
+          } else {
+            sortedElements.map(function (array) {
+              pluginContainer.append(elements[Number(array[0])])
+            });
+          }
         }
 
         const targets = pluginContainer.find('[data-key]')
