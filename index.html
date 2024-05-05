@@ -9,7 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
     <link rel="stylesheet" href="assets/style.css" />
-    <link rel="stylesheet" href="./src/highlighter22.css">
+    <link rel="stylesheet" href="./src/highlighter22.css" />
   </head>
   <body data-prismjs-copy-timeout="500">
     <div class="container">
@@ -64,7 +64,11 @@
           </p>
         </div>
 
-        <div class="box" data-filter data-json="['xyz', 'user is not bad user', 'user', 'user two is amazing user', 'I love USER']">
+        <div
+          class="box"
+          data-filter
+          data-json="['xyz', 'user two is amazing user', 'I love USER']"
+        >
           <h4 data-key>Heading Two</h4>
           <p data-key>
             Style too own civil out along. Perfectly offending attempted add
@@ -75,15 +79,20 @@
           </p>
         </div>
 
-        <div class="box" data-filter data-json="['user', 'User Pane', 'User setting']">
+        <div
+          class="box"
+          data-filter
+          data-json="['user', 'User Pane', 'user is very very bad user not a good user and the worst user', 'User setting']"
+        >
           <h4 data-key>Heading Three</h4>
           <p data-key>
-            On am & you or any user who oh no  we offices expense thought. Its hence ten smile age means.
-            Seven chief sight far point any. Of so high into easy. Dashwoods
-            eagerness oh extensive as discourse sportsman frankness. Husbands
-            see disposed surprise likewise humoured yet pleasure. Fifteen no
-            inquiry cordial so resolve garrets as. Impression was estimating
-            surrounded solicitude indulgence son shy.
+            On am & you or any user who oh no we offices expense thought. Its
+            hence ten smile age means. Seven chief sight far point any. Of so
+            high into easy. Dashwoods eagerness oh extensive as discourse
+            sportsman frankness. Husbands see disposed surprise likewise
+            humoured yet pleasure. Fifteen no inquiry cordial so resolve garrets
+            as. Impression was estimating surrounded solicitude indulgence son
+            shy.
           </p>
         </div>
       </div>
@@ -106,6 +115,7 @@ $(document).ready(function () {
     backgroundColor: "red",
     color: "white",
     filter: true,
+    animation: 'fade'
   });
 });
         </code></pre>
@@ -114,7 +124,7 @@ $(document).ready(function () {
     <script src="jquery.min.js"></script>
     <script src="./assets/web.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
-    <script src="./highlighter22.min.js"></script>
+    <script src="./src/highlighter22.js"></script>
 
     <script>
       $(document).ready(function () {
@@ -122,6 +132,7 @@ $(document).ready(function () {
           backgroundColor: "red",
           color: "white",
           filter: true,
+          animation: "fade",
         });
       });
     </script>

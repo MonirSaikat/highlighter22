@@ -11,7 +11,7 @@
       padding: 0,
       targets: [],
       filter: false,
-      animation: 'bounce1'
+      animation: false
     }, options);
 
     const animateTypes = {
@@ -79,16 +79,29 @@
             cnt[_index] = countOccurrences(filterableContent, lowerCaseValue);
 
             const display = $(this).css('display');
-            const first = animateTypes[settings.animation].first;
-            const second = animateTypes[settings.animation].second;
+            const first = settings.animation ? animateTypes[settings.animation].first : null;
+            const second = settings.animation ? animateTypes[settings.animation].second : null;
 
             if (cnt[_index]) {
-              if (display == 'none') {
-                $(this).addClass(first).removeClass(second).show();
+              if (!settings.animation) {
+                $(this).show();
+              } else {
+                if (display == 'none') {
+                  $(this).addClass(first).removeClass(second).show();
+                } else {
+                  $(this).removeClass(first);
+                }
               }
             } else {
-              if (display == 'block') {
-                $(this).addClass(second).removeClass(first).hide();
+              if (!settings.animation) {
+                $(this).hide();
+              } else {
+                if (display == 'block' && !$(this).hasClass(first)) {
+                  $(this).addClass(second).removeClass(first);
+                  setTimeout(() => {
+                    $(this).hide();
+                  }, 500)
+                }
               }
             }
 

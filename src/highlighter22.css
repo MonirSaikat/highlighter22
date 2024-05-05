@@ -1,3 +1,7 @@
+:root {
+  --animation-time: 0.5;
+}
+
 @keyframes bounceIn {
   0% {
     opacity: 0;
