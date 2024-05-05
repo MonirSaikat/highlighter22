@@ -17,6 +17,8 @@
       return `color: ${settings.color}; background-color: ${settings.backgroundColor}; padding: ${settings.padding}px;`;
     }
 
+    const pluginContainer = $('[data-highlighter-22]');
+
     return this.each(function () {
       var $input = $(this);
 
@@ -26,7 +28,7 @@
 
         // filter feature
         if (settings.filter) {
-          $('[data-filter]').each(function (item) {
+          pluginContainer.find('[data-filter]').each(function (item) {
             const filterableContent = $(this)
               .text()
               .toString()
@@ -41,7 +43,7 @@
           });
         }
 
-        const targets = $('[data-highlighter-22] [data-key]')
+        const targets = pluginContainer.find('[data-key]')
         if (targets.length > 0) {
           $.each(targets, function (index, targetEl) {
             $(targetEl).each(function (_index, target) {
